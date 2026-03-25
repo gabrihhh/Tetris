@@ -25,7 +25,7 @@ class TetrisConstants {
 
   // Tick
   static const double baseTickRate = 0.8;
-  static const double softDropMultiplier = 8.0;
+  static const double softDropMultiplier = 4.0;
 
   // Lock delay
   static const double lockDelaySeconds = 0.5;
@@ -40,7 +40,7 @@ class TetrisConstants {
   };
 
   // Input
-  static const double swipeThreshold = 45.0;
+  static const double swipeThreshold = 65.0;
   static const double hardDropVelocityThreshold = 1000.0;
 
   // Colors

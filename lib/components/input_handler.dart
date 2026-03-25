@@ -17,12 +17,15 @@ class InputHandler extends PositionComponent
   }
 
   // ── Tap = rotate ──────────────────────────────────────────────
+  // Fallback: fires only when onDragEnd didn't already handle the event.
+  // We set _dragConsumed = true so that if onDragEnd fires afterwards
+  // (Flame event order is not guaranteed) it won't double-rotate.
   @override
   void onTapUp(TapUpEvent event) {
     if (!_dragConsumed) {
       game.onRotate();
+      _dragConsumed = true;
     }
-    _dragConsumed = false;
     super.onTapUp(event);
   }
 
@@ -89,6 +92,14 @@ class InputHandler extends PositionComponent
           _dragConsumed = true;
           game.onHardDrop();
         }
+      }
+
+      // If no gesture was consumed, treat it as a tap → rotate.
+      // This is more reliable than onTapUp alone because Flame sometimes
+      // skips onTapUp when the finger moves slightly during a tap.
+      if (!_dragConsumed) {
+        _dragConsumed = true; // prevent onTapUp from double-rotating
+        game.onRotate();
       }
     }
 

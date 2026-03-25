@@ -35,14 +35,27 @@ class _HomeScreenState extends State<HomeScreen> {
               const Spacer(flex: 2),
 
               // Título
-              const Text(
-                'TETRIS',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 64,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 8,
-                ),
+              Column(
+                children: [
+                  const Text(
+                    'TETRAMINO',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 38,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 8,
+                    ),
+                  ),
+                  const Text(
+                    'CLASSIC',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w300,
+                      letterSpacing: 10,
+                    ),
+                  ),
+                ],
               ),
 
               const Spacer(flex: 3),

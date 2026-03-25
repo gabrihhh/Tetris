@@ -119,6 +119,7 @@ class TetrisGame extends FlameGame {
     if (fullRows.isNotEmpty) {
       scoreManager.onLinesCleared(board.clearRows(fullRows));
     }
+    _tickAccumulator = 0;
     _spawnNextPiece();
   }
 

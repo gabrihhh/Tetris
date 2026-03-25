@@ -105,7 +105,7 @@ class PieceController {
     currentPiece = piece;
     rotationIndex = 0;
     col = TetrisConstants.boardCols ~/ 2 - 2;
-    row = TetrisConstants.hiddenRows - 1; // spawn na última linha do buffer, peça aparece imediatamente
+    row = TetrisConstants.hiddenRows; // spawn na primeira linha visível
     _lockTimer = 0;
     _lockResets = 0;
     _isOnGround = false;
